@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-player-container">
+        <div class="background"></div>
+        <div class="player-box">
+            <img id="song-image" src="song-image.jpg" alt="Song Cover">
+            <h2 id="song-name">Song Name</h2>
+            <audio id="audio" src="song.mp3" autoplay></audio>
+
+            <div class="controls">
+                <button id="prev">Previous</button>
+                <button id="play-pause">Play</button>
+                <button id="restart">Restart</button>
+                <button id="next">Next</button>
+            </div>
+            <div class="progress-bar-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar" id="progress-bar">
+                    <div id="progress"></div>
+                </div>
+                <span id="total-duration">0:00</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .parent {
+      background-color: #000000;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .child {
+      border: 2px solid;
+      width: 20vw;
+      height: 33vh;
+      margin: 10px;
+      position: relative; /* To position tooltip */
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 100%; /* Show above the div */
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      visibility: hidden; /* Initially hidden */
+      opacity: 0;
+      transition: opacity 0.3s;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .child:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .button-container {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button onclick="changeColors()">Change Colors</button>
+  </div>
+  <div class="parent">
+    <div class="child">
+      <div class="tooltip"></div>
+    </div>
+    <div class="child">
+      <div class="tooltip"></div>
+    </div>
+    <div class="child">
+      <div class="tooltip"></div>
+    </div>
+    <div class="child">
+      <div class="tooltip"></div>
+    </div>
+  </div>
+
+  <script>
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let hexColor = '#';
+      for (let i = 0; i < 6; i++) {
+        hexColor += letters[Math.floor(Math.random() * 16)];
+      }
+      const rgbaColor = `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 1)`;
+      return { hex: hexColor, rgba: rgbaColor };
+    }
+
+    function changeColors() {
+      const children = document.querySelectorAll('.child');
+      children.forEach(child => {
+        const color = getRandomColor();
+        child.style.backgroundColor = color.hex;
+        const tooltip = child.querySelector('.tooltip');
+        tooltip.textContent = `Hex: ${color.hex}\nRGBA: ${color.rgba}`;
+      });
+    }
+  </script>
+</body>
+</html>

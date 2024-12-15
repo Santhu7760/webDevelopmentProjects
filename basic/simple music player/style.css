@@ -1,0 +1,117 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background image with blur */
+.music-player-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('song-image.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+/* Player box styling */
+.player-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.player-box img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.player-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Control buttons */
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #61dafb;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #21a1f1;
+}
+
+/* Progress bar */
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+#progress {
+    width: 0;
+    height: 100%;
+    background-color: #61dafb;
+    transition: width 0.1s linear;
+}
+
+/* Time display */
+#current-time,
+#total-duration {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .player-box {
+        padding: 15px;
+    }
+
+    .player-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .controls button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}

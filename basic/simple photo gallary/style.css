@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bab8b8;
+    margin: 0;
+    padding: 20px;
+}
+
+nav {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.7s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgb(232, 175, 220);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+img {
+    max-width: 200px;
+    max-height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.description {
+    font-size: 16px;
+    color: #7d7d7d;
+    background-color: #e8e6e6;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dfdada;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    visibility: hidden;
+    transition: visibility 0.2s;
+}
+
+.like-dislike {
+    display: flex;
+    gap: 10px;
+    margin: 10px 2.5px;
+}
+
+.like-dislike button {
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.like-dislike button:hover {
+    background-color: #bbb;
+}
+
+.like-dislike button:active {
+    background-color: #aaa;
+}
+
+button.liked {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.disliked {
+    background-color: #f44336;
+    color: white;
+}
